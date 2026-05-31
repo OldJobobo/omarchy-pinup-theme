@@ -1,0 +1,35 @@
+# Accent and UI colors
+accent = "#004584"
+active_border_color = "#2865b6"
+active_tab_background = "#004584"
+
+# Cursor colors
+cursor = "#190403"
+
+# Primary colors
+foreground = "#190403"
+background = "#eee1c3"
+
+# Selection colors
+selection_foreground = "#eee1c3"
+selection_background = "#004584"
+
+# Normal colors (ANSI 0-7)
+color0 = "#eee1c3"
+color1 = "#6b2e06"
+color2 = "#465900"
+color3 = "#61620d"
+color4 = "#004584"
+color5 = "#6d2e52"
+color6 = "#00656a"
+color7 = "#190403"
+
+# Bright colors (ANSI 8-15)
+color8 = "#6b5040"
+color9 = "#944e1e"
+color10 = "#4d6500"
+color11 = "#696300"
+color12 = "#1f59ac"
+color13 = "#964b79"
+color14 = "#196065"
+color15 = "#391d19"
