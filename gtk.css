@@ -1,5 +1,16 @@
+/*    .-============================-. */
+/*  .'   *     .     *     .     *    '. */
+/* /     ____ ___ _   _ _   _ ____      \ */
+/* |    |  _ \_ _| \ | | | | |  _ \     | */
+/* |    | |_) | ||  \| | | | | |_) |    | */
+/* |    |  __/| || |\  | |_| |  __/     | */
+/* |    |_|  |___|_| \_|\___/|_|        | */
+/* \                                    / */
+/*  '.    *     .     *     .    *    .' */
+/*    '-============================-' */
+
 /**
- * Aether Theme with Sharp Corners (Hyprland-inspired)
+ * Pinup Theme with rounded Hyprland-inspired corners
  * GTK4/Adwaita Custom Styling
  */
 
@@ -15,7 +26,7 @@
 @define-color magenta #6d2e52;
 @define-color cyan #00656a;
 @define-color white #190403;
-@define-color bright_black #dcd0a3;
+@define-color bright_black #b59b72;
 @define-color bright_red #944e1e;
 @define-color bright_green #657e00;
 @define-color bright_yellow #838707;
@@ -177,8 +188,21 @@ toast button.circular.flat.image-button:hover {
     background-color: @red;
 }
 
-/* Sharp corners, Hyprland-inspired */
+/* Match Hyprland rounding for a consistent surface language. */
 * {
-    border-radius: 0;
+    border-radius: 12px;
 }
 
+/*  ______   __       ______                                        */
+/* /_____/\ /_/\     /_____/\                                       */
+/* \:::_ \ \\:\ \    \:::_ \ \                                      */
+/*  \:\ \ \ \\:\ \    \:\ \ \ \                                     */
+/*   \:\ \ \ \\:\ \____\:\ \ \ \                                    */
+/*    \:\_\ \ \\:\/___/\\:\/.:| |                                   */
+/*  ___\_____\/_\_____\/ \____/_/  ______    _______   ______       */
+/* /________/\/_____/\ /_______/\ /_____/\ /_______/\ /_____/\      */
+/* \__.::.__\/\:::_ \ \\::: _  \ \\:::_ \ \\::: _  \ \\:::_ \ \     */
+/*   /_\::\ \  \:\ \ \ \\::(_)  \/_\:\ \ \ \\::(_)  \/_\:\ \ \ \    */
+/*   \:.\::\ \  \:\ \ \ \\::  _  \ \\:\ \ \ \\::  _  \ \\:\ \ \ \   */
+/*    \: \  \ \  \:\_\ \ \\::(_)  \ \\:\_\ \ \\::(_)  \ \\:\_\ \ \  */
+/*     \_____\/   \_____\/ \_______\/ \_____\/ \_______\/ \_____\/  */
