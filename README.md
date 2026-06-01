@@ -53,4 +53,4 @@ omarchy-theme-install https://github.com/OldJobobo/omarchy-pinup-theme
 
 - `light.mode` is included, so Omarchy should treat this as a light theme.
 - The theme uses `Yaru-blue` from `icons.theme`.
-- Some editor integration filenames retain Aether naming because they use that theme format internally.
+
