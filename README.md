@@ -17,13 +17,13 @@ omarchy-theme-install https://github.com/OldJobobo/omarchy-pinup-theme
 ~/.config/omarchy/themes/pinup/bin/pinup-mode install
 ```
 ```
-~/.config/omarchy/themes/pinup/bin/pinup-mode default light
+pinup-mode default light
 ```
 
 For a dark default, use this instead of the last command:
 
 ```
-~/.config/omarchy/themes/pinup/bin/pinup-mode default dark
+pinup-mode default dark
 ```
 
 The install step adds `pinup-mode` and `pinup-toggle` to `~/.local/bin`, configures `~/.local/bin` in the user's shell profile when needed, and installs the Pinup theme-set hook.
