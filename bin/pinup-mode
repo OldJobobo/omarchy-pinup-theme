@@ -6,14 +6,21 @@ source_theme_dir=$(cd "$(dirname "$script_path")/.." && pwd)
 active_theme_dir="${HOME}/.config/omarchy/current/theme"
 theme_name_file="${HOME}/.config/omarchy/current/theme.name"
 theme_dir="${PINUP_THEME_DIR:-$active_theme_dir}"
+user_theme_dir="${PINUP_USER_THEME_DIR:-${HOME}/.config/omarchy/themes/pinup}"
+official_theme_dir="${OMARCHY_PATH:-${HOME}/.local/share/omarchy}/themes/pinup"
 dry_run=0
 
 usage() {
   cat <<'USAGE'
 Usage: pinup-mode [--dry-run] <light|dark|toggle|status|install>
+       pinup-mode [--dry-run] default <light|dark|status>
 
 Switch the active Omarchy Pinup theme between its bundled light and dark
 overlays. Set PINUP_THEME_DIR to target a different theme directory.
+
+Use `pinup-mode default dark` to make Omarchy's theme switcher load Pinup in
+dark mode by default. This updates the installed theme source in
+~/.config/omarchy/themes/pinup.
 
 Run `pinup-mode install` once to add `pinup-mode` and `pinup-toggle` commands
 to ~/.local/bin.
@@ -75,6 +82,13 @@ ensure_pinup_target() {
       exit 1
     }
   fi
+}
+
+ensure_mode_overlays() {
+  [[ -d "$source_theme_dir/modes/light" && -d "$source_theme_dir/modes/dark" ]] || {
+    log "Mode overlays are missing from: $source_theme_dir/modes"
+    exit 1
+  }
 }
 
 shell_apply_theme() {
@@ -152,6 +166,58 @@ apply_mode() {
   log "Pinup mode: $mode"
 }
 
+default_mode() {
+  if [[ -f "$user_theme_dir/mode.default" ]]; then
+    case "$(tr -d '[:space:]' <"$user_theme_dir/mode.default")" in
+      light | dark) tr -d '[:space:]' <"$user_theme_dir/mode.default"; return ;;
+    esac
+  fi
+
+  printf 'light\n'
+}
+
+set_default_mode() {
+  local mode="$1"
+  local overlay="$source_theme_dir/modes/$mode"
+
+  ensure_mode_overlays
+  [[ "$mode" == "light" || "$mode" == "dark" ]] || {
+    log "Invalid default mode: $mode"
+    usage
+    exit 1
+  }
+
+  log "Setting Pinup default mode to $mode"
+  if [[ ! -d "$user_theme_dir" && ! -d "$official_theme_dir" ]]; then
+    log "Pinup is not installed in $user_theme_dir."
+    log "Install or apply the theme before setting a default mode."
+    exit 1
+  fi
+
+  run mkdir -p "$user_theme_dir"
+  run cp -a "$overlay/." "$user_theme_dir/"
+  if [[ "$mode" == "light" ]]; then
+    run touch "$user_theme_dir/light.mode"
+  else
+    run rm -f "$user_theme_dir/light.mode"
+  fi
+
+  if (( dry_run )); then
+    log "+ write $user_theme_dir/mode.default = $mode"
+  else
+    printf '%s\n' "$mode" >"$user_theme_dir/mode.default"
+  fi
+
+  if [[ "$theme_dir" == "$active_theme_dir" && -f "$theme_name_file" ]]; then
+    active_name=$(tr -d '[:space:]' <"$theme_name_file")
+    if [[ "$active_name" == "pinup" ]]; then
+      apply_mode "$mode"
+    fi
+  fi
+
+  log "Pinup default mode: $mode"
+}
+
 install_user_commands() {
   ensure_pinup_target
 
@@ -217,6 +283,21 @@ case "$command_name" in
     ;;
   install)
     install_user_commands
+    ;;
+  default)
+    default_command="${2:-status}"
+    case "$default_command" in
+      light | dark)
+        set_default_mode "$default_command"
+        ;;
+      status)
+        default_mode
+        ;;
+      *)
+        usage
+        exit 1
+        ;;
+    esac
     ;;
   *)
     usage

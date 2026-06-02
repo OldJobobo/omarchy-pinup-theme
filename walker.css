@@ -9,15 +9,15 @@
 /*  '.    *     .     *     .    *    .' */
 /*    '-============================-' */
 
-@define-color selected-text #004584;
-@define-color text #190403;
-@define-color base #eee1c3;
-@define-color border #b59b72;
-@define-color foreground #190403;
+@define-color selected-text #5f8fd8;
+@define-color text #f1dfbe;
+@define-color base #190403;
+@define-color border #6f4d3c;
+@define-color foreground #f1dfbe;
 @define-color background alpha(@base, 0.94);
-@define-color accent #004584;
-@define-color focus #2865b6;
-@define-color urgent #6b2e06;
+@define-color accent #5f8fd8;
+@define-color focus #8cb2ee;
+@define-color urgent #b45a24;
 @define-color hover alpha(@accent, 0.10);
 @define-color selected alpha(@accent, 0.16);
 @define-color selected-border alpha(@focus, 0.65);

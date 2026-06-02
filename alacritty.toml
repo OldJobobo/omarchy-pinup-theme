@@ -20,32 +20,32 @@ opacity = 0.888
 transparent_background_colors = true
 
 [colors.primary]
-background = "#eee1c3"
-foreground = "#190403"
+background = "#190403"
+foreground = "#f1dfbe"
 
 [colors.normal]
-black   = "#eee1c3"
-red     = "#6b2e06"
-green   = "#465900"
-yellow  = "#61620d"
-blue    = "#004584"
-magenta = "#6d2e52"
-cyan    = "#00656a"
-white   = "#190403"
+black   = "#190403"
+red     = "#b45a24"
+green   = "#8da33c"
+yellow  = "#c5a64f"
+blue    = "#5f8fd8"
+magenta = "#b86591"
+cyan    = "#3fa0a6"
+white   = "#f1dfbe"
 
 [colors.bright]
-black   = "#b59b72"
-red     = "#944e1e"
-green   = "#657e00"
-yellow  = "#838707"
-blue    = "#2865b6"
-magenta = "#964b79"
-cyan    = "#2b8a90"
-white   = "#391d19"
+black   = "#6f4d3c"
+red     = "#d0793d"
+green   = "#a9bf5a"
+yellow  = "#d9bd67"
+blue    = "#8cb2ee"
+magenta = "#d587ae"
+cyan    = "#68bdc2"
+white   = "#fff1d2"
 
 [colors.cursor]
-text   = "#eee1c3"
-cursor = "#190403"
+text   = "#190403"
+cursor = "#f1dfbe"
 
 #   ______   __       ______
 #  /_____/\ /_/\     /_____/\

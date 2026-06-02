@@ -60,9 +60,12 @@ pinup-toggle
 pinup-mode light
 pinup-mode dark
 pinup-mode status
+pinup-mode default dark
+pinup-mode default light
+pinup-mode default status
 ```
 
-The one-time `install` command adds `pinup-mode` and `pinup-toggle` to `~/.local/bin`. The helper copies the selected `modes/light` or `modes/dark` overlay into the active theme, updates Omarchy's light/dark marker, applies shell colors, reloads Hyprland, and reruns the relevant theme hooks. Running `omarchy-theme-set pinup` restores the theme from its source files; run `pinup-mode` again afterward to choose the desired mode.
+The one-time `install` command adds `pinup-mode` and `pinup-toggle` to `~/.local/bin`. The helper copies the selected `modes/light` or `modes/dark` overlay into the active theme, updates Omarchy's light/dark marker, applies shell colors, reloads Hyprland, and reruns the relevant theme hooks. Use `pinup-mode default dark` or `pinup-mode default light` to choose what loads when Pinup is selected from Omarchy's theme switcher.
 
 ## Compatibility
 

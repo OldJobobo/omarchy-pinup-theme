@@ -9,17 +9,17 @@
 /*  '.    *     .     *     .    *    .' */
 /*    '-============================-' */
 
-@define-color base #eee1c3;
-@define-color foreground #190403;
+@define-color base #190403;
+@define-color foreground #f1dfbe;
 @define-color background alpha(@base, 0.85);
 @define-color panel alpha(@base, 0.98);
 @define-color popups alpha(@base, 0.98);
 @define-color tooltip_bg alpha(@base, 0.97);
-@define-color border #b59b72;
-@define-color accent #004584;
-@define-color focus #2865b6;
-@define-color urgent #6b2e06;
-@define-color pressed #6d2e52;
+@define-color border #6f4d3c;
+@define-color accent #5f8fd8;
+@define-color focus #8cb2ee;
+@define-color urgent #b45a24;
+@define-color pressed #b86591;
 @define-color hover alpha(@accent, 0.10);
 @define-color selected alpha(@accent, 0.18);
 @define-color selected_border alpha(@focus, 0.65);
@@ -130,7 +130,7 @@ tooltip label {
 }
 
 #battery.warning {
-    color: #61620d;
+    color: #c5a64f;
 }
 
 /*  ______   __       ______                                        */

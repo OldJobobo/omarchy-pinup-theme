@@ -12,7 +12,7 @@
         "themes": [
             {
                 "label": "Aether",
-                "uiTheme": "vs-light",
+                "uiTheme": "vs-dark",
                 "path": "./themes/aether-color-theme.json"
             }
         ]

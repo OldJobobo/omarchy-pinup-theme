@@ -9,14 +9,14 @@
 /*  '.    *     .     *     .    *    .' */
 /*    '-============================-' */
 
-@define-color background-color alpha(#eee1c3, 0.98);
-@define-color border-color #b59b72;
-@define-color label #190403;
-@define-color image #190403;
-@define-color progress #004584;
-@define-color progress-muted alpha(#004584, 0.18);
-@define-color warning #61620d;
-@define-color urgent #6b2e06;
+@define-color background-color alpha(#190403, 0.98);
+@define-color border-color #6f4d3c;
+@define-color label #f1dfbe;
+@define-color image #f1dfbe;
+@define-color progress #5f8fd8;
+@define-color progress-muted alpha(#5f8fd8, 0.18);
+@define-color warning #c5a64f;
+@define-color urgent #b45a24;
 
 /*  ______   __       ______                                        */
 /* /_____/\ /_/\     /_____/\                                       */

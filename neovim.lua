@@ -19,35 +19,35 @@ return {
             transparent = false,
             colors = {
                 -- Background colors
-                bg = "#eee1c3",
-                bg_dark = "#eee1c3",
-                bg_highlight = "#b59b72",
+                bg = "#190403",
+                bg_dark = "#190403",
+                bg_highlight = "#6f4d3c",
 
                 -- Foreground colors
                 -- fg: Object properties, builtin types, builtin variables, member access, default text
-                fg = "#190403",
+                fg = "#f1dfbe",
                 -- fg_dark: Inactive elements, statusline, secondary text
-                fg_dark = "#190403",
+                fg_dark = "#f1dfbe",
                 -- comment: Line highlight, gutter elements, disabled states
-                comment = "#b59b72",
+                comment = "#6f4d3c",
 
                 -- Accent colors
                 -- red: Errors, diagnostics, tags, deletions, breakpoints
-                red = "#6b2e06",
+                red = "#b45a24",
                 -- orange: Constants, numbers, current line number, git modifications
-                orange = "#944e1e",
+                orange = "#d0793d",
                 -- yellow: Types, classes, constructors, warnings, numbers, booleans
-                yellow = "#61620d",
+                yellow = "#c5a64f",
                 -- green: Comments, strings, success states, git additions
-                green = "#465900",
+                green = "#8da33c",
                 -- cyan: Parameters, regex, preprocessor, hints, properties
-                cyan = "#00656a",
+                cyan = "#3fa0a6",
                 -- blue: Functions, keywords, directories, links, info diagnostics
-                blue = "#004584",
+                blue = "#5f8fd8",
                 -- purple: Storage keywords, special keywords, identifiers, namespaces
-                purple = "#6d2e52",
+                purple = "#b86591",
                 -- magenta: Function declarations, exception handling, tags
-                magenta = "#964b79",
+                magenta = "#d587ae",
             },
         },
         config = function(_, opts)

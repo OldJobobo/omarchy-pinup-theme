@@ -13,12 +13,12 @@
 -- Keep this file focused on style: color, depth, motion, and polish.
 
 local colors = {
-	paper = "eee1c3",
-	ink = "190403",
-	tan = "b59b72",
-	accent = "004584",
-	focus = "2865b6",
-	burgundy = "6d2e52",
+	paper = "190403",
+	ink = "f1dfbe",
+	tan = "6f4d3c",
+	accent = "5f8fd8",
+	focus = "8cb2ee",
+	burgundy = "b86591",
 }
 
 local activeBorderColor = {
@@ -32,8 +32,8 @@ local activeBorderColor = {
 
 local inactiveBorderColor = "rgba(" .. colors.tan .. "a8)"
 local groupInactiveBorderColor = "rgba(" .. colors.tan .. "82)"
-local activeShadowColor = "rgba(" .. colors.ink .. "42)"
-local inactiveShadowColor = "rgba(" .. colors.ink .. "24)"
+local activeShadowColor = "rgba(0000005a)"
+local inactiveShadowColor = "rgba(00000034)"
 
 hl.config({
 	general = {
