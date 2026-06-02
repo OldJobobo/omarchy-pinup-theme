@@ -49,6 +49,22 @@ run() {
   fi
 }
 
+has_mode_overlays() {
+  local dir="$1"
+  [[ -d "$dir/modes/light" && -d "$dir/modes/dark" ]]
+}
+
+mode_source_dir() {
+  for dir in "$user_theme_dir" "$official_theme_dir" "$source_theme_dir" "$theme_dir"; do
+    if has_mode_overlays "$dir"; then
+      printf '%s\n' "$dir"
+      return
+    fi
+  done
+
+  printf '%s\n' "$source_theme_dir"
+}
+
 current_mode() {
   if [[ -f "$theme_dir/mode.state" ]]; then
     case "$(tr -d '[:space:]' <"$theme_dir/mode.state")" in
@@ -69,13 +85,16 @@ current_mode() {
 }
 
 ensure_pinup_target() {
+  local overlay_source
+
   [[ -d "$theme_dir" ]] || {
     log "Target theme directory does not exist: $theme_dir"
     exit 1
   }
 
-  [[ -d "$source_theme_dir/modes/light" && -d "$source_theme_dir/modes/dark" ]] || {
-    log "Mode overlays are missing from: $source_theme_dir/modes"
+  overlay_source=$(mode_source_dir)
+  has_mode_overlays "$overlay_source" || {
+    log "Mode overlays are missing from: $overlay_source/modes"
     exit 1
   }
 
@@ -90,8 +109,11 @@ ensure_pinup_target() {
 }
 
 ensure_mode_overlays() {
-  [[ -d "$source_theme_dir/modes/light" && -d "$source_theme_dir/modes/dark" ]] || {
-    log "Mode overlays are missing from: $source_theme_dir/modes"
+  local overlay_source
+
+  overlay_source=$(mode_source_dir)
+  has_mode_overlays "$overlay_source" || {
+    log "Mode overlays are missing from: $overlay_source/modes"
     exit 1
   }
 }
@@ -147,7 +169,8 @@ apply_followup_hooks() {
 
 apply_mode() {
   local mode="$1"
-  local overlay="$source_theme_dir/modes/$mode"
+  local overlay_source
+  local overlay
 
   ensure_pinup_target
   [[ "$mode" == "light" || "$mode" == "dark" ]] || {
@@ -156,7 +179,11 @@ apply_mode() {
     exit 1
   }
 
+  overlay_source=$(mode_source_dir)
+  overlay="$overlay_source/modes/$mode"
+
   log "Applying Pinup $mode mode to $theme_dir"
+  log "Using mode files from $overlay_source"
   run cp -a "$overlay/." "$theme_dir/"
   if [[ "$mode" == "light" ]]; then
     run touch "$theme_dir/light.mode"
@@ -175,8 +202,11 @@ apply_mode() {
 
 default_mode() {
   local mode
+  local overlay_source
 
-  for mode_file in "$default_mode_file" "$user_theme_dir/mode.default" "$source_theme_dir/mode.default"; do
+  overlay_source=$(mode_source_dir)
+
+  for mode_file in "$default_mode_file" "$user_theme_dir/mode.default" "$overlay_source/mode.default" "$source_theme_dir/mode.default"; do
     if [[ -f "$mode_file" ]]; then
       mode=$(tr -d '[:space:]' <"$mode_file")
       case "$mode" in
@@ -305,11 +335,16 @@ install_user_commands() {
   local local_bin="${HOME}/.local/bin"
   local command_path="$local_bin/pinup-mode"
   local toggle_path="$local_bin/pinup-toggle"
-  local target_script="$theme_dir/bin/pinup-mode"
+  local install_source
+  local target_script
 
+  install_source=$(mode_source_dir)
+  target_script="$install_source/bin/pinup-mode"
+  [[ -f "$target_script" ]] || target_script="$theme_dir/bin/pinup-mode"
   [[ -f "$target_script" ]] || target_script="$script_path"
 
   log "Installing Pinup mode commands to $local_bin"
+  log "Linking pinup-mode to $target_script"
   run mkdir -p "$local_bin"
   run ln -sfn "$target_script" "$command_path"
   install_default_hook
