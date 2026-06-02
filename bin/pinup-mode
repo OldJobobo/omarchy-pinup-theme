@@ -146,6 +146,15 @@ run_best_effort() {
   fi
 }
 
+run_theme_set_hooks() {
+  command -v omarchy-hook >/dev/null 2>&1 || return 0
+  if (( dry_run )); then
+    log '+ PINUP_MODE_HOOK_ACTIVE=1 omarchy-hook theme-set pinup'
+  else
+    PINUP_MODE_HOOK_ACTIVE=1 omarchy-hook theme-set pinup >/dev/null 2>&1 || true
+  fi
+}
+
 apply_followup_hooks() {
   shell_apply_theme
 
@@ -163,7 +172,7 @@ apply_followup_hooks() {
   run_best_effort omarchy-theme-set-obsidian
   run_best_effort omarchy-theme-set-keyboard
   if [[ "${PINUP_MODE_SKIP_THEME_HOOKS:-0}" != "1" ]]; then
-    run_best_effort omarchy-hook theme-set pinup
+    run_theme_set_hooks
   fi
 }
 

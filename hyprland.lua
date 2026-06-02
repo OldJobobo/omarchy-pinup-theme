@@ -159,25 +159,6 @@ hl.window_rule({
 	},
 })
 
-hl.layer_rule({
-	blur = true,
-	match = {
-		namespace = "walker",
-	},
-})
-hl.layer_rule({
-	blur = true,
-	match = {
-		namespace = "notifications",
-	},
-})
-hl.layer_rule({
-	blur = true,
-	match = {
-		namespace = "swayosd",
-	},
-})
-
 --  ______   __       ______
 -- /_____/\ /_/\     /_____/\
 -- \:::_ \ \\:\ \    \:::_ \ \
