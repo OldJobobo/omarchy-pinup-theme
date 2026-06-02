@@ -12,7 +12,11 @@ Fresh install:
 
 ```
 omarchy-theme-install https://github.com/OldJobobo/omarchy-pinup-theme
+```
+```
 ~/.config/omarchy/themes/pinup/bin/pinup-mode install
+```
+```
 ~/.config/omarchy/themes/pinup/bin/pinup-mode default light
 ```
 
