@@ -13,12 +13,12 @@
 -- Keep this file focused on style: color, depth, motion, and polish.
 
 local colors = {
-	paper = "190403",
-	ink = "f1dfbe",
-	tan = "6f4d3c",
-	accent = "5f8fd8",
-	focus = "8cb2ee",
-	burgundy = "b86591",
+	paper = "eee1c3",
+	ink = "190403",
+	tan = "b59b72",
+	accent = "004584",
+	focus = "2865b6",
+	burgundy = "6d2e52",
 }
 
 local activeBorderColor = {
@@ -32,8 +32,8 @@ local activeBorderColor = {
 
 local inactiveBorderColor = "rgba(" .. colors.tan .. "a8)"
 local groupInactiveBorderColor = "rgba(" .. colors.tan .. "82)"
-local activeShadowColor = "rgba(0000005a)"
-local inactiveShadowColor = "rgba(00000034)"
+local activeShadowColor = "rgba(" .. colors.ink .. "42)"
+local inactiveShadowColor = "rgba(" .. colors.ink .. "24)"
 
 hl.config({
 	general = {
@@ -87,7 +87,7 @@ hl.config({
 	decoration = {
 		rounding = 12,
 		rounding_power = 2,
-		active_opacity = 0.999,
+		-- active_opacity = 0.999,
 		inactive_opacity = 0.97,
 		fullscreen_opacity = 1.0,
 		dim_inactive = true,
@@ -105,10 +105,10 @@ hl.config({
 			new_optimizations = true,
 			xray = false,
 			noise = 0.04,
-			contrast = 0.92,
-			brightness = 1.08,
-			vibrancy = 0.08,
-			vibrancy_darkness = 0.16,
+			contrast = 0.88,
+			brightness = 0.96,
+			vibrancy = 0.04,
+			vibrancy_darkness = 0.22,
 			popups_ignorealpha = 0.55,
 			input_methods_ignorealpha = 0.55,
 		},

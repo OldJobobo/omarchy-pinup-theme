@@ -13,38 +13,38 @@
 # ~/.config/omarchy/current/theme/shell.toml by omarchy-shell.
 
 [bar]
-background       = "#190403"
+background       = "#eee1c3"
 background-alpha = 0.85
-text             = "#f1dfbe"
-active           = "#b45a24"
+text             = "#190403"
+active           = "#6b2e06"
 scale-with-font  = true
 size-horizontal  = 28
 size-vertical    = 30
 
 [controls]
-normal-color        = "#f1dfbe"
+normal-color        = "#190403"
 normal-fill-alpha   = 0.04
 normal-border-width = 1
 normal-border-alpha = 0.28
 
-hover-cursor-color        = "#5f8fd8"
+hover-cursor-color        = "#004584"
 hover-cursor-fill-alpha   = 0.10
 hover-cursor-border-width = 1
 hover-cursor-border-alpha = 0.55
 
-focus-color        = "#8cb2ee"
+focus-color        = "#2865b6"
 focus-fill-alpha   = 0.12
 focus-border-width = 1
 focus-border-alpha = 0.75
 
-selected-color        = "#5f8fd8"
+selected-color        = "#004584"
 selected-fill-alpha   = 0.18
 selected-border-width = 1
 selected-border-alpha = 0.65
 
-pressed-color        = "#b86591"
+pressed-color        = "#6d2e52"
 pressed-fill-alpha   = 0.22
-selection-color      = "#5f8fd8"
+selection-color      = "#004584"
 selection-fill-alpha = 0.35
 
 [spacing]
@@ -82,86 +82,86 @@ icon = 14
 icon-large = 18
 
 [popups]
-background       = "#190403"
+background       = "#eee1c3"
 background-alpha = 0.98
-text             = "#f1dfbe"
-border           = "#6f4d3c"
+text             = "#190403"
+border           = "#b59b72"
 border-alpha     = 1.0
 
 [tooltip]
-background       = "#190403"
+background       = "#eee1c3"
 background-alpha = 0.97
-text             = "#f1dfbe"
-border           = "#5f8fd8"
+text             = "#190403"
+border           = "#004584"
 border-alpha     = 0.9
 
 [notifications]
-background       = "#190403"
+background       = "#eee1c3"
 background-alpha = 0.98
-text             = "#f1dfbe"
-border           = "#b86591"
+text             = "#190403"
+border           = "#6d2e52"
 border-alpha     = 1.0
-countdown        = "#5f8fd8"
+countdown        = "#004584"
 
 [launcher]
-background                = "#190403"
+background                = "#eee1c3"
 background-alpha          = 0.94
-text                      = "#f1dfbe"
-border                    = "#6f4d3c"
+text                      = "#190403"
+border                    = "#b59b72"
 border-alpha              = 1.0
-scrim                     = "#f1dfbe"
+scrim                     = "#190403"
 scrim-alpha               = 0.22
-selected-background       = "#5f8fd8"
+selected-background       = "#004584"
 selected-background-alpha = 0.16
-selected-text             = "#5f8fd8"
-selected-border           = "#8cb2ee"
+selected-text             = "#004584"
+selected-border           = "#2865b6"
 selected-border-alpha     = 0.65
 
 [menu]
-background                = "#190403"
+background                = "#eee1c3"
 background-alpha          = 0.98
-text                      = "#f1dfbe"
-border                    = "#6f4d3c"
+text                      = "#190403"
+border                    = "#b59b72"
 border-alpha              = 1.0
-scrim                     = "#f1dfbe"
+scrim                     = "#190403"
 scrim-alpha               = 0.20
-selected-background       = "#5f8fd8"
+selected-background       = "#004584"
 selected-background-alpha = 0.16
-selected-text             = "#5f8fd8"
-selected-border           = "#8cb2ee"
+selected-text             = "#004584"
+selected-border           = "#2865b6"
 selected-border-alpha     = 0.65
 
 [polkit]
-background       = "#190403"
+background       = "#eee1c3"
 background-alpha = 0.98
-text             = "#f1dfbe"
-text-error       = "#b45a24"
-border           = "#5f8fd8"
-border-error     = "#b45a24"
+text             = "#190403"
+text-error       = "#6b2e06"
+border           = "#004584"
+border-error     = "#6b2e06"
 border-alpha     = 1.0
-scrim            = "#f1dfbe"
+scrim            = "#190403"
 scrim-alpha      = 0.24
-accent           = "#5f8fd8"
+accent           = "#004584"
 
 [lock]
-background       = "#190403"
+background       = "#eee1c3"
 background-alpha = 0.84
-text             = "#f1dfbe"
-text-error       = "#b45a24"
-border           = "#6f4d3c"
-border-active    = "#5f8fd8"
-border-error     = "#b45a24"
+text             = "#190403"
+text-error       = "#6b2e06"
+border           = "#b59b72"
+border-active    = "#004584"
+border-error     = "#6b2e06"
 border-alpha     = 1.0
-selection        = "#5f8fd8"
+selection        = "#004584"
 selection-alpha  = 0.42
 
 [image-picker]
-scrim                   = "#f1dfbe"
+scrim                   = "#190403"
 scrim-alpha             = 0.34
-text                    = "#190403"
-selected-border         = "#5f8fd8"
+text                    = "#eee1c3"
+selected-border         = "#004584"
 selected-border-alpha   = 1.0
-unselected-border       = "#190403"
+unselected-border       = "#eee1c3"
 unselected-border-alpha = 0.36
 
 #  ______   __       ______

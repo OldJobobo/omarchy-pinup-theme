@@ -9,43 +9,43 @@
 #  '.    *     .     *     .    *    .'
 #    '-============================-'
 
-mode = "dark"
+mode = "light"
 
 # Accent and UI colors
-accent = "#5f8fd8"
-active_border_color = "#8cb2ee"
-active_tab_background = "#5f8fd8"
+accent = "#004584"
+active_border_color = "#2865b6"
+active_tab_background = "#004584"
 
 # Cursor colors
-cursor = "#f1dfbe"
+cursor = "#190403"
 
 # Primary colors
-foreground = "#f1dfbe"
-background = "#190403"
+foreground = "#190403"
+background = "#eee1c3"
 
 # Selection colors
-selection_foreground = "#190403"
-selection_background = "#5f8fd8"
+selection_foreground = "#eee1c3"
+selection_background = "#004584"
 
 # Normal colors (ANSI 0-7)
-color0 = "#190403"
-color1 = "#b45a24"
-color2 = "#8da33c"
-color3 = "#c5a64f"
-color4 = "#5f8fd8"
-color5 = "#b86591"
-color6 = "#3fa0a6"
-color7 = "#f1dfbe"
+color0 = "#eee1c3"
+color1 = "#6b2e06"
+color2 = "#465900"
+color3 = "#61620d"
+color4 = "#004584"
+color5 = "#6d2e52"
+color6 = "#00656a"
+color7 = "#190403"
 
 # Bright colors (ANSI 8-15)
-color8 = "#6f4d3c"
-color9 = "#d0793d"
-color10 = "#a9bf5a"
-color11 = "#d9bd67"
-color12 = "#8cb2ee"
-color13 = "#d587ae"
-color14 = "#68bdc2"
-color15 = "#fff1d2"
+color8 = "#b59b72"
+color9 = "#944e1e"
+color10 = "#657e00"
+color11 = "#838707"
+color12 = "#2865b6"
+color13 = "#964b79"
+color14 = "#2b8a90"
+color15 = "#391d19"
 
 #  ______   __       ______
 # /_____/\ /_/\     /_____/\
