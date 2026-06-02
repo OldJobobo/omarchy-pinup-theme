@@ -1,0 +1,95 @@
+#    .-============================-.
+#  .'   *     .     *     .     *    '.
+# /     ____ ___ _   _ _   _ ____      \
+# |    |  _ \_ _| \ | | | | |  _ \     |
+# |    | |_) | ||  \| | | | | |_) |    |
+# |    |  __/| || |\  | |_| |  __/     |
+# |    |_|  |___|_| \_|\___/|_|        |
+# \                                    /
+#  '.    *     .     *     .    *    .'
+#    '-============================-'
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#eee1c3"
+
+# Main text color
+theme[main_fg]="#190403"
+
+# Title color for boxes
+theme[title]="#6d2e52"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#004584"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#004584"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#eee1c3"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#b59b72"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#944e1e"
+
+# Box outline and divider line color
+theme[cpu_box]="#2865b6"
+theme[mem_box]="#6d2e52"
+theme[net_box]="#00656a"
+theme[proc_box]="#944e1e"
+theme[div_line]="#b59b72"
+
+# Gradient for all meters and graphs
+theme[temp_start]="#00656a"
+theme[temp_mid]="#838707"
+theme[temp_end]="#944e1e"
+
+
+theme[cpu_start]="#2865b6"
+theme[cpu_mid]="#2b8a90"
+theme[cpu_end]="#964b79"
+
+
+theme[free_start]="#465900"
+theme[free_mid]="#657e00"
+theme[free_end]="#838707"
+
+
+theme[cached_start]="#b59b72"
+theme[cached_mid]="#b59b72"
+theme[cached_end]="#944e1e"
+
+
+theme[available_start]="#00656a"
+theme[available_mid]="#2b8a90"
+theme[available_end]="#657e00"
+
+
+theme[used_start]="#004584"
+theme[used_mid]="#6d2e52"
+theme[used_end]="#6b2e06"
+
+
+theme[download_start]="#2865b6"
+theme[download_mid]="#00656a"
+theme[download_end]="#657e00"
+
+
+theme[upload_start]="#6d2e52"
+theme[upload_mid]="#944e1e"
+theme[upload_end]="#838707"
+
+#  ______   __       ______
+# /_____/\ /_/\     /_____/\
+# \:::_ \ \\:\ \    \:::_ \ \
+#  \:\ \ \ \\:\ \    \:\ \ \ \
+#   \:\ \ \ \\:\ \____\:\ \ \ \
+#    \:\_\ \ \\:\/___/\\:\/.:| |
+#  ___\_____\/_\_____\/ \____/_/  ______    _______   ______
+# /________/\/_____/\ /_______/\ /_____/\ /_______/\ /_____/\
+# \__.::.__\/\:::_ \ \\::: _  \ \\:::_ \ \\::: _  \ \\:::_ \ \
+#   /_\::\ \  \:\ \ \ \\::(_)  \/_\:\ \ \ \\::(_)  \/_\:\ \ \ \
+#   \:.\::\ \  \:\ \ \ \\::  _  \ \\:\ \ \ \\::  _  \ \\:\ \ \ \
+#    \: \  \ \  \:\_\ \ \\::(_)  \ \\:\_\ \ \\::(_)  \ \\:\_\ \ \
+#     \_____\/   \_____\/ \_______\/ \_____\/ \_______\/ \_____\/

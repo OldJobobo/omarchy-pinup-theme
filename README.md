@@ -17,6 +17,7 @@ omarchy-theme-install https://github.com/OldJobobo/omarchy-pinup-theme
 ## What's Included
 
 - A light Omarchy palette with cream backgrounds, dark ink text, blue selection states, and warm vintage support colors.
+- Bundled light and dark mode overlays, switchable with `bin/pinup-mode`.
 - Theme-scoped Hyprland styling with rounded windows, soft depth, active border gradients, and tuned animation curves.
 - Omarchy shell tokens in `shell.toml` for bar, popups, launcher, menus, notifications, lock, and image picker surfaces.
 - Matching Waybar, Walker, Mako, SwayOSD, Hyprlock, GTK, Chromium, and Vencord styling.
@@ -49,8 +50,25 @@ omarchy-theme-install https://github.com/OldJobobo/omarchy-pinup-theme
   </tr>
 </table>
 
+## Light and Dark Mode
+
+After installing and applying the theme, switch modes from the active theme:
+
+```bash
+~/.config/omarchy/current/theme/bin/pinup-mode install
+pinup-toggle
+pinup-mode light
+pinup-mode dark
+pinup-mode status
+```
+
+The one-time `install` command adds `pinup-mode` and `pinup-toggle` to `~/.local/bin`. The helper copies the selected `modes/light` or `modes/dark` overlay into the active theme, updates Omarchy's light/dark marker, applies shell colors, reloads Hyprland, and reruns the relevant theme hooks. Running `omarchy-theme-set pinup` restores the theme from its source files; run `pinup-mode` again afterward to choose the desired mode.
+
+## Compatibility
+
+This theme still includes `hyprland.conf` for Omarchy 3.8.2 and other pre-Lua setups. Newer Omarchy builds use `hyprland.lua` for richer window styling, while older installs ignore it and continue loading the fallback `hyprland.conf`.
+
 ## Notes
 
 - `light.mode` is included, so Omarchy should treat this as a light theme.
 - The theme uses `Yaru-blue` from `icons.theme`.
-

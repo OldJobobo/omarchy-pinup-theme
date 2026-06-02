@@ -1,0 +1,148 @@
+/*    .-============================-. */
+/*  .'   *     .     *     .     *    '. */
+/* /     ____ ___ _   _ _   _ ____      \ */
+/* |    |  _ \_ _| \ | | | | |  _ \     | */
+/* |    | |_) | ||  \| | | | | |_) |    | */
+/* |    |  __/| || |\  | |_| |  __/     | */
+/* |    |_|  |___|_| \_|\___/|_|        | */
+/* \                                    / */
+/*  '.    *     .     *     .    *    .' */
+/*    '-============================-' */
+
+@define-color base #eee1c3;
+@define-color foreground #190403;
+@define-color background alpha(@base, 0.85);
+@define-color panel alpha(@base, 0.98);
+@define-color popups alpha(@base, 0.98);
+@define-color tooltip_bg alpha(@base, 0.97);
+@define-color border #b59b72;
+@define-color accent #004584;
+@define-color focus #2865b6;
+@define-color urgent #6b2e06;
+@define-color pressed #6d2e52;
+@define-color hover alpha(@accent, 0.10);
+@define-color selected alpha(@accent, 0.18);
+@define-color selected_border alpha(@focus, 0.65);
+
+window#waybar {
+    background: @background;
+    color: @foreground;
+    min-height: 28px;
+    font-size: 12px;
+}
+
+window#waybar > box {
+    background: transparent;
+}
+
+tooltip {
+    background: @tooltip_bg;
+    color: @foreground;
+    border: 1px solid alpha(@accent, 0.9);
+}
+
+tooltip label {
+    color: @foreground;
+}
+
+#workspaces,
+#clock,
+#tray,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#wireplumber,
+#backlight,
+#cpu,
+#memory,
+#temperature,
+#custom-power,
+#custom-notification,
+#custom-update,
+#custom-weather {
+    color: @foreground;
+    background: transparent;
+    padding: 0 11px;
+    margin: 0 2px;
+    min-height: 28px;
+}
+
+#workspaces {
+    padding: 0 4px;
+}
+
+#workspaces button {
+    color: @foreground;
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 0 8px;
+    margin: 3px 1px;
+}
+
+#workspaces button:hover {
+    color: @accent;
+    background: @hover;
+    border-color: alpha(@accent, 0.55);
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    color: @accent;
+    background: @selected;
+    border-color: @selected_border;
+}
+
+#workspaces button.urgent,
+#battery.critical,
+#custom-notification.notification,
+#custom-update.update {
+    color: @urgent;
+    background: alpha(@urgent, 0.14);
+    border-color: alpha(@urgent, 0.65);
+}
+
+#clock {
+    color: @foreground;
+    background: alpha(@base, 0.18);
+}
+
+#tray menu {
+    background: @popups;
+    color: @foreground;
+    border: 1px solid @border;
+}
+
+#tray menuitem {
+    color: @foreground;
+    padding: 6px 10px;
+}
+
+#tray menuitem:hover {
+    color: @accent;
+    background: @hover;
+}
+
+#network.disconnected,
+#pulseaudio.muted,
+#wireplumber.muted {
+    color: @pressed;
+}
+
+#battery.warning {
+    color: #61620d;
+}
+
+/*  ______   __       ______                                        */
+/* /_____/\ /_/\     /_____/\                                       */
+/* \:::_ \ \\:\ \    \:::_ \ \                                      */
+/*  \:\ \ \ \\:\ \    \:\ \ \ \                                     */
+/*   \:\ \ \ \\:\ \____\:\ \ \ \                                    */
+/*    \:\_\ \ \\:\/___/\\:\/.:| |                                   */
+/*  ___\_____\/_\_____\/ \____/_/  ______    _______   ______       */
+/* /________/\/_____/\ /_______/\ /_____/\ /_______/\ /_____/\      */
+/* \__.::.__\/\:::_ \ \\::: _  \ \\:::_ \ \\::: _  \ \\:::_ \ \     */
+/*   /_\::\ \  \:\ \ \ \\::(_)  \/_\:\ \ \ \\::(_)  \/_\:\ \ \ \    */
+/*   \:.\::\ \  \:\ \ \ \\::  _  \ \\:\ \ \ \\::  _  \ \\:\ \ \ \   */
+/*    \: \  \ \  \:\_\ \ \\::(_)  \ \\:\_\ \ \\::(_)  \ \\:\_\ \ \  */
+/*     \_____\/   \_____\/ \_______\/ \_____\/ \_______\/ \_____\/  */

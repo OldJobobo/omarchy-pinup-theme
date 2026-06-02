@@ -1,0 +1,179 @@
+#    .-============================-.
+#  .'   *     .     *     .     *    '.
+# /     ____ ___ _   _ _   _ ____      \
+# |    |  _ \_ _| \ | | | | |  _ \     |
+# |    | |_) | ||  \| | | | | |_) |    |
+# |    |  __/| || |\  | |_| |  __/     |
+# |    |_|  |___|_| \_|\___/|_|        |
+# \                                    /
+#  '.    *     .     *     .    *    .'
+#    '-============================-'
+
+# Omarchy shell theme tokens for the Pinup theme. These values are read from
+# ~/.config/omarchy/current/theme/shell.toml by omarchy-shell.
+
+[bar]
+background       = "#190403"
+background-alpha = 0.85
+text             = "#f1dfbe"
+active           = "#b45a24"
+scale-with-font  = true
+size-horizontal  = 28
+size-vertical    = 30
+
+[controls]
+normal-color        = "#f1dfbe"
+normal-fill-alpha   = 0.04
+normal-border-width = 1
+normal-border-alpha = 0.28
+
+hover-cursor-color        = "#5f8fd8"
+hover-cursor-fill-alpha   = 0.10
+hover-cursor-border-width = 1
+hover-cursor-border-alpha = 0.55
+
+focus-color        = "#8cb2ee"
+focus-fill-alpha   = 0.12
+focus-border-width = 1
+focus-border-alpha = 0.75
+
+selected-color        = "#5f8fd8"
+selected-fill-alpha   = 0.18
+selected-border-width = 1
+selected-border-alpha = 0.65
+
+pressed-color        = "#b86591"
+pressed-fill-alpha   = 0.22
+selection-color      = "#5f8fd8"
+selection-fill-alpha = 0.35
+
+[spacing]
+scale = 1.05
+scale-with-font = true
+control-gap = 8
+control-padding-x = 11
+control-padding-y = 6
+input-padding-y = 7
+control-height = 29
+popup-row-height = 30
+row-gap = 8
+row-padding-x = 12
+label-gap = 4
+panel-gap = 15
+panel-padding = 19
+popup-padding = 15
+dropdown-width = 250
+searchable-dropdown-width = 270
+number-field-width = 124
+searchable-popup-min-height = 230
+
+[font]
+base-size = 12
+caption = 10
+body-small = 11
+body = 12
+subtitle = 13
+title = 14
+heading = 16
+display = 24
+display-large = 28
+icon-small = 11
+icon = 14
+icon-large = 18
+
+[popups]
+background       = "#190403"
+background-alpha = 0.98
+text             = "#f1dfbe"
+border           = "#6f4d3c"
+border-alpha     = 1.0
+
+[tooltip]
+background       = "#190403"
+background-alpha = 0.97
+text             = "#f1dfbe"
+border           = "#5f8fd8"
+border-alpha     = 0.9
+
+[notifications]
+background       = "#190403"
+background-alpha = 0.98
+text             = "#f1dfbe"
+border           = "#b86591"
+border-alpha     = 1.0
+countdown        = "#5f8fd8"
+
+[launcher]
+background                = "#190403"
+background-alpha          = 0.94
+text                      = "#f1dfbe"
+border                    = "#6f4d3c"
+border-alpha              = 1.0
+scrim                     = "#f1dfbe"
+scrim-alpha               = 0.22
+selected-background       = "#5f8fd8"
+selected-background-alpha = 0.16
+selected-text             = "#5f8fd8"
+selected-border           = "#8cb2ee"
+selected-border-alpha     = 0.65
+
+[menu]
+background                = "#190403"
+background-alpha          = 0.98
+text                      = "#f1dfbe"
+border                    = "#6f4d3c"
+border-alpha              = 1.0
+scrim                     = "#f1dfbe"
+scrim-alpha               = 0.20
+selected-background       = "#5f8fd8"
+selected-background-alpha = 0.16
+selected-text             = "#5f8fd8"
+selected-border           = "#8cb2ee"
+selected-border-alpha     = 0.65
+
+[polkit]
+background       = "#190403"
+background-alpha = 0.98
+text             = "#f1dfbe"
+text-error       = "#b45a24"
+border           = "#5f8fd8"
+border-error     = "#b45a24"
+border-alpha     = 1.0
+scrim            = "#f1dfbe"
+scrim-alpha      = 0.24
+accent           = "#5f8fd8"
+
+[lock]
+background       = "#190403"
+background-alpha = 0.84
+text             = "#f1dfbe"
+text-error       = "#b45a24"
+border           = "#6f4d3c"
+border-active    = "#5f8fd8"
+border-error     = "#b45a24"
+border-alpha     = 1.0
+selection        = "#5f8fd8"
+selection-alpha  = 0.42
+
+[image-picker]
+scrim                   = "#f1dfbe"
+scrim-alpha             = 0.34
+text                    = "#190403"
+selected-border         = "#5f8fd8"
+selected-border-alpha   = 1.0
+unselected-border       = "#190403"
+unselected-border-alpha = 0.36
+
+#  ______   __       ______
+# /_____/\ /_/\     /_____/\
+# \:::_ \ \\:\ \    \:::_ \ \
+#  \:\ \ \ \\:\ \    \:\ \ \ \
+#   \:\ \ \ \\:\ \____\:\ \ \ \
+#    \:\_\ \ \\:\/___/\\:\/.:| |
+#  ___\_____\/_\_____\/ \____/_/  ______    _______   ______
+# /________/\/_____/\ /_______/\ /_____/\ /_______/\ /_____/\
+# \__.::.__\/\:::_ \ \\::: _  \ \\:::_ \ \\::: _  \ \\:::_ \ \
+#   /_\::\ \  \:\ \ \ \\::(_)  \/_\:\ \ \ \\::(_)  \/_\:\ \ \ \
+#   \:.\::\ \  \:\ \ \ \\::  _  \ \\:\ \ \ \\::  _  \ \\:\ \ \ \
+#    \: \  \ \  \:\_\ \ \\::(_)  \ \\:\_\ \ \\::(_)  \ \\:\_\ \ \
+#     \_____\/   \_____\/ \_______\/ \_____\/ \_______\/ \_____\/

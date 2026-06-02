@@ -1,0 +1,225 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+script_path=$(readlink -f "${BASH_SOURCE[0]}")
+source_theme_dir=$(cd "$(dirname "$script_path")/.." && pwd)
+active_theme_dir="${HOME}/.config/omarchy/current/theme"
+theme_name_file="${HOME}/.config/omarchy/current/theme.name"
+theme_dir="${PINUP_THEME_DIR:-$active_theme_dir}"
+dry_run=0
+
+usage() {
+  cat <<'USAGE'
+Usage: pinup-mode [--dry-run] <light|dark|toggle|status|install>
+
+Switch the active Omarchy Pinup theme between its bundled light and dark
+overlays. Set PINUP_THEME_DIR to target a different theme directory.
+
+Run `pinup-mode install` once to add `pinup-mode` and `pinup-toggle` commands
+to ~/.local/bin.
+USAGE
+}
+
+log() {
+  printf '%s\n' "$*"
+}
+
+run() {
+  if (( dry_run )); then
+    printf '+ %q' "$1"
+    shift || true
+    for arg in "$@"; do
+      printf ' %q' "$arg"
+    done
+    printf '\n'
+  else
+    "$@"
+  fi
+}
+
+current_mode() {
+  if [[ -f "$theme_dir/mode.state" ]]; then
+    case "$(tr -d '[:space:]' <"$theme_dir/mode.state")" in
+      light | dark) tr -d '[:space:]' <"$theme_dir/mode.state"; return ;;
+    esac
+  fi
+
+  if [[ -f "$theme_dir/colors.toml" ]]; then
+    awk -F'"' '/^[[:space:]]*mode[[:space:]]*=/{ print $2; exit }' "$theme_dir/colors.toml"
+    return
+  fi
+
+  if [[ -f "$theme_dir/light.mode" ]]; then
+    printf 'light\n'
+  else
+    printf 'dark\n'
+  fi
+}
+
+ensure_pinup_target() {
+  [[ -d "$theme_dir" ]] || {
+    log "Target theme directory does not exist: $theme_dir"
+    exit 1
+  }
+
+  [[ -d "$source_theme_dir/modes/light" && -d "$source_theme_dir/modes/dark" ]] || {
+    log "Mode overlays are missing from: $source_theme_dir/modes"
+    exit 1
+  }
+
+  if [[ "$theme_dir" == "$active_theme_dir" && -f "$theme_name_file" ]]; then
+    active_name=$(tr -d '[:space:]' <"$theme_name_file")
+    [[ "$active_name" == "pinup" ]] || {
+      log "Active Omarchy theme is '$active_name', not 'pinup'."
+      log "Set PINUP_THEME_DIR to override the target directory."
+      exit 1
+    }
+  fi
+}
+
+shell_apply_theme() {
+  command -v omarchy-shell >/dev/null 2>&1 || return 0
+
+  if (( dry_run )); then
+    log '+ omarchy-shell shell applyTheme <colors.toml> <shell.toml>'
+    return 0
+  fi
+
+  colors_payload=""
+  shell_payload=""
+  [[ -f "$theme_dir/colors.toml" ]] && colors_payload=$(base64 -w 0 "$theme_dir/colors.toml")
+  [[ -f "$theme_dir/shell.toml" ]] && shell_payload=$(base64 -w 0 "$theme_dir/shell.toml")
+
+  timeout 2 omarchy-shell shell applyTheme "$colors_payload" "$shell_payload" >/dev/null 2>&1 || true
+}
+
+run_best_effort() {
+  local cmd="$1"
+  shift || true
+
+  command -v "$cmd" >/dev/null 2>&1 || return 0
+  if (( dry_run )); then
+    run "$cmd" "$@"
+  else
+    "$cmd" "$@" >/dev/null 2>&1 || true
+  fi
+}
+
+apply_followup_hooks() {
+  shell_apply_theme
+
+  run_best_effort hyprctl reload
+  run_best_effort omarchy-restart-terminal
+  run_best_effort omarchy-restart-hyprctl
+  run_best_effort omarchy-restart-btop
+  run_best_effort omarchy-restart-helix
+  run_best_effort omarchy-theme-set-foot
+  run_best_effort omarchy-theme-set-tmux
+  run_best_effort omarchy-theme-set-gnome
+  run_best_effort omarchy-theme-set-pi --activate
+  run_best_effort omarchy-theme-set-browser
+  run_best_effort omarchy-theme-set-vscode
+  run_best_effort omarchy-theme-set-obsidian
+  run_best_effort omarchy-theme-set-keyboard
+  run_best_effort omarchy-hook theme-set pinup
+}
+
+apply_mode() {
+  local mode="$1"
+  local overlay="$source_theme_dir/modes/$mode"
+
+  ensure_pinup_target
+  [[ "$mode" == "light" || "$mode" == "dark" ]] || {
+    log "Invalid mode: $mode"
+    usage
+    exit 1
+  }
+
+  log "Applying Pinup $mode mode to $theme_dir"
+  run cp -a "$overlay/." "$theme_dir/"
+  if [[ "$mode" == "light" ]]; then
+    run touch "$theme_dir/light.mode"
+  else
+    run rm -f "$theme_dir/light.mode"
+  fi
+  if (( dry_run )); then
+    log "+ write $theme_dir/mode.state = $mode"
+  else
+    printf '%s\n' "$mode" >"$theme_dir/mode.state"
+  fi
+
+  apply_followup_hooks
+  log "Pinup mode: $mode"
+}
+
+install_user_commands() {
+  ensure_pinup_target
+
+  local local_bin="${HOME}/.local/bin"
+  local command_path="$local_bin/pinup-mode"
+  local toggle_path="$local_bin/pinup-toggle"
+  local target_script="$theme_dir/bin/pinup-mode"
+
+  [[ -f "$target_script" ]] || target_script="$script_path"
+
+  log "Installing Pinup mode commands to $local_bin"
+  run mkdir -p "$local_bin"
+  run ln -sfn "$target_script" "$command_path"
+
+  if (( dry_run )); then
+    log "+ write $toggle_path"
+    log "+ chmod +x $toggle_path"
+  else
+    cat >"$toggle_path" <<'EOF'
+#!/usr/bin/env bash
+exec pinup-mode toggle "$@"
+EOF
+    chmod +x "$toggle_path"
+  fi
+
+  log "Installed: pinup-mode, pinup-toggle"
+  if [[ ":$PATH:" != *":$local_bin:"* ]]; then
+    log "Note: $local_bin is not currently in PATH."
+  fi
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run)
+      dry_run=1
+      shift
+      ;;
+    -h | --help)
+      usage
+      exit 0
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+command_name="${1:-}"
+case "$command_name" in
+  light | dark)
+    apply_mode "$command_name"
+    ;;
+  toggle)
+    mode=$(current_mode)
+    if [[ "$mode" == "dark" ]]; then
+      apply_mode light
+    else
+      apply_mode dark
+    fi
+    ;;
+  status)
+    current_mode
+    ;;
+  install)
+    install_user_commands
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
