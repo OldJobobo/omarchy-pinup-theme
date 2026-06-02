@@ -29,24 +29,24 @@ omarchy-theme-install https://github.com/OldJobobo/omarchy-pinup-theme
 
 <table>
   <tr>
-    <td><img src="backgrounds/Girls%20Wallpaper%20Hot%20Pics%20Vintage%20Pin%20Up_LE_upscale_digiart.jpg" width="220" alt="Vintage pin-up wallpaper"></td>
-    <td><img src="backgrounds/hello-sailor_LE_upscale_digiart.jpg" width="220" alt="Hello sailor pin-up wallpaper"></td>
-    <td><img src="backgrounds/Pin%20Up%20Girls%20Wallpaper%20Best_LE_upscale_digiart.jpg" width="220" alt="Pin-up girls wallpaper"></td>
+    <td><img src="backgrounds/01-ladder-light.jpg" width="220" alt="Ladder Light wallpaper"></td>
+    <td><img src="backgrounds/02-hello-sailor.jpg" width="220" alt="Hello Sailor wallpaper"></td>
+    <td><img src="backgrounds/03-autumn-archer.jpg" width="220" alt="Autumn Archer wallpaper"></td>
   </tr>
   <tr>
-    <td><img src="backgrounds/Pin%20Up%20Girls%20Wallpaper%20For%20Dekstop_LE_upscale_digiart.jpg" width="220" alt="Desktop pin-up wallpaper"></td>
-    <td><img src="backgrounds/Pin%20Up%20Girls%20Wallpaper%20Paintings%20Art_LE_upscale_digiart.jpg" width="220" alt="Painted pin-up wallpaper"></td>
-    <td><img src="backgrounds/Pin%20Up%20Wallpaper%20HD%20Background_LE_upscale_digiart.jpg" width="220" alt="HD pin-up wallpaper"></td>
+    <td><img src="backgrounds/04-garden-bench.jpg" width="220" alt="Garden Bench wallpaper"></td>
+    <td><img src="backgrounds/05-cowgirl-loop.jpg" width="220" alt="Cowgirl Loop wallpaper"></td>
+    <td><img src="backgrounds/06-target-belle.jpg" width="220" alt="Target Belle wallpaper"></td>
   </tr>
   <tr>
-    <td><img src="backgrounds/Pin%20Up%20Wallpaper%20Style%20Retro%20Girls%20Honnoror_LE_upscale_digiart.jpg" width="220" alt="Retro pin-up wallpaper"></td>
-    <td><img src="backgrounds/wp5849027-vintage-pin-up-hd-wallpapers_LE_upscale_digiart.jpg" width="220" alt="Vintage pin-up wallpaper 9027"></td>
-    <td><img src="backgrounds/wp5849042-vintage-pin-up-hd-wallpapers_LE_upscale_digiart.jpg" width="220" alt="Vintage pin-up wallpaper 9042"></td>
+    <td><img src="backgrounds/07-roadside-map.jpg" width="220" alt="Roadside Map wallpaper"></td>
+    <td><img src="backgrounds/08-strawhat-meadow.jpg" width="220" alt="Strawhat Meadow wallpaper"></td>
+    <td><img src="backgrounds/09-telephone-chair.jpg" width="220" alt="Telephone Chair wallpaper"></td>
   </tr>
   <tr>
-    <td><img src="backgrounds/High%20Resolution%20Wallpaper%20Pin%20Up%20Girls_LE_upscale_digiart.jpg" width="220" alt="High-resolution pin-up wallpaper"></td>
-    <td><img src="backgrounds/High%20Resolution%20Wallpaper%20Pin%20Up%20Girls%20%281%29_LE_upscale_digiart.jpg" width="220" alt="High-resolution pin-up wallpaper variant"></td>
-    <td><img src="backgrounds/wp5849056-vintage-pin-up-hd-wallpapers_LE_upscale_digiart.jpg" width="220" alt="Vintage pin-up wallpaper 9056"></td>
+    <td><img src="backgrounds/10-purple-thread.jpg" width="220" alt="Purple Thread wallpaper"></td>
+    <td><img src="backgrounds/11-blue-mast.jpg" width="220" alt="Blue Mast wallpaper"></td>
+    <td><img src="backgrounds/12-radio-song.jpg" width="220" alt="Radio Song wallpaper"></td>
   </tr>
 </table>
 
