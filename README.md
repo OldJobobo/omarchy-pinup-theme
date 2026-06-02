@@ -71,6 +71,8 @@ Default mode preferences are stored outside the theme checkout at `~/.config/oma
 
 After `omarchy-theme-update`, run `pinup-mode install` once if an older install linked `pinup-mode` to `~/.config/omarchy/current/theme`. New installs link `pinup-mode` to the installed theme checkout under `~/.config/omarchy/themes/pinup`, so mode switches use the updated `modes/light` and `modes/dark` files.
 
+If `readlink -f ~/.local/bin/pinup-mode` shows `~/.config/omarchy/current/theme/bin/pinup-mode`, refresh the command link from the installed checkout with `~/.config/omarchy/themes/pinup/bin/pinup-mode install`.
+
 ## Compatibility
 
 This theme still includes `hyprland.conf` for Omarchy 3.8.2 and other pre-Lua setups. Newer Omarchy builds use `hyprland.lua` for richer window styling, while older installs ignore it and continue loading the fallback `hyprland.conf`.

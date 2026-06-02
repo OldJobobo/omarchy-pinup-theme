@@ -245,11 +245,17 @@ case "$mode" in
   *) exit 0 ;;
 esac
 
-if command -v pinup-mode >/dev/null 2>&1; then
-  pinup_mode_command=$(command -v pinup-mode)
-else
-  pinup_mode_command="${HOME}/.config/omarchy/current/theme/bin/pinup-mode"
-fi
+pinup_mode_command=""
+for candidate in \
+  "${PINUP_USER_THEME_DIR:-${HOME}/.config/omarchy/themes/pinup}/bin/pinup-mode" \
+  "${OMARCHY_PATH:-${HOME}/.local/share/omarchy}/themes/pinup/bin/pinup-mode" \
+  "${HOME}/.config/omarchy/current/theme/bin/pinup-mode"
+do
+  if [[ -x "$candidate" ]]; then
+    pinup_mode_command="$candidate"
+    break
+  fi
+done
 
 [[ -x "$pinup_mode_command" ]] || exit 0
 
