@@ -4,7 +4,9 @@ A light vintage pin-up theme for Omarchy, built around warm paper, dark ink, sai
 
 ## Preview
 
-![Omarchy Pinup theme preview](preview.png)
+![Omarchy Pinup Light theme preview](preview.png)
+![Omarchy Pinup Dark theme preview](preview-dark.png)
+
 
 ## Install
 
