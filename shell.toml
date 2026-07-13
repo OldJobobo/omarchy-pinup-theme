@@ -21,6 +21,10 @@ scale-with-font  = true
 size-horizontal  = 28
 size-vertical    = 30
 
+[hyprland]
+active-border            = "rgba(004584ee) rgba(2865b6f2) rgba(6d2e52d6) 38deg"
+active-border-foreground = "rgb(004584) rgb(2865b6) 38deg"
+
 [controls]
 normal-color        = "#190403"
 normal-fill-alpha   = 0.04
